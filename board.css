@@ -1,0 +1,324 @@
+/* ===========================
+   🎨 THEME VARIABLES
+   =========================== */
+:root {
+    --bg-dark: #4b4b4b;
+    --bg-mid: #3d3d3d;
+    --bg-light: #cecdcd;
+    --accent-green: #4bb543;
+    --accent-red: #ff4c4c;
+    --text-light: #fff;
+    --text-dark: #222;
+    --shadow: rgba(0, 0, 0, 0.3);
+}
+
+/* ===========================
+   GLOBAL RESET
+   =========================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+button,
+.priority-color,
+.ticket-lock {
+    transition: all 0.3s ease;
+}
+
+/* ===========================
+   TOOLBOX
+   =========================== */
+.toolbox-cont {
+    height: 5rem;
+    background-color: var(--bg-dark);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.toolbox-cont > * {
+    margin-left: 4rem;
+}
+
+.toolbox-priority-cont {
+    height: 3.5rem;
+    width: 18rem;
+    background-color: var(--bg-mid);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 6px;
+}
+
+.toolbox-priority-cont > *:hover {
+    cursor: pointer;
+}
+
+.color {
+    height: 1.5rem;
+    width: 3rem;
+    border-radius: 4px;
+}
+.color.selected-color {
+    border: 3px solid var(--accent-green);
+    transform: scale(1.5);
+    transition: 0.2s ease;
+}
+
+/* Color Classes */
+.lightpink {
+    background-color: lightpink;
+}
+.lightgreen {
+    background-color: lightgreen;
+}
+.lightblue {
+    background-color: lightblue;
+}
+.black {
+    background-color: black;
+}
+
+.projtitle {
+    color: var(--text-light);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* ===========================
+   ACTION BUTTONS
+   =========================== */
+.action-btn-cont {
+    height: 3.5rem;
+    width: 8rem;
+    background-color: var(--bg-mid);
+    display: flex;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.action-btn-cont > * {
+    display: flex;
+    width: 50%;
+    font-size: 2rem;
+    color: var(--text-light);
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.add-btn:hover,
+.remove-btn:hover {
+    background-color: var(--accent-green);
+    transform: scale(1.05);
+}
+
+/* ===========================
+    TICKET AREA
+   =========================== */
+.main-cont {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    gap: 1rem;
+}
+
+.ticket-cont {
+    display: flex;
+    flex-direction: column;
+    border-left: 28px solid var(--ticket-color);
+    background: var(--bg-light);
+    border-radius: 8px;
+    padding: 10px;
+    width: 230px;
+    min-height: 100px;
+    box-shadow: 0 4px 10px var(--shadow);
+    transition: all 0.3s ease;
+}
+
+.ticket-cont:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 14px var(--shadow);
+}
+
+.ticket-removal-active {
+    box-shadow: 0 0 10px 3px rgba(255, 0, 0, 0.6);
+    transform: scale(1.02);
+    transition: all 0.3s ease;
+}
+
+/* Ticket content */
+.ticket-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.ticket-id {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 6px;
+}
+
+.ticket-task {
+    padding: 8px 3px;
+    border-radius: 6px;
+    font-size: 14px;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+    word-wrap: break-word;
+}
+
+/* Lock icon */
+.ticket-lock {
+    align-self: flex-end;
+    color: #444;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.ticket-lock:hover {
+    transform: scale(1.2);
+}
+
+/* ===========================
+    TEXT EDIT
+   =========================== */
+.task-edit-box {
+    width: 100%;
+    min-height: 60px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 6px;
+}
+
+/* ===========================
+    MODAL
+   =========================== */
+.modal-cont {
+    height: 50vh;
+    width: 50vw;
+    display: none;
+    background-color: lightsalmon;
+    border: 1px solid gray;
+    position: absolute;
+    top: 30%;
+    left: 25%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.textArea-cont {
+    height: 100%;
+    width: 75%;
+    resize: none;
+    outline: none;
+    border: none;
+    background-color: #dfe4ea;
+    font-size: 2rem;
+    color: black;
+    padding: 1rem;
+}
+
+.priority-colors-container {
+    height: 100%;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-dark);
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.priority-color {
+    height: 3rem;
+    width: 4rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.active {
+    transform: scale(1.3);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+    border: 2px solid var(--accent-red);
+}
+
+/* ===========================
+    RESPONSIVE DESIGN
+   =========================== */
+
+/* Tablet view */
+@media screen and (max-width: 768px) {
+    .priority-colors-container {
+        width: 50%;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .priority-color {
+        height: 2.5rem;
+        width: 3.5rem;
+    }
+
+    .modal-cont {
+        width: 80vw;
+        left: 10%;
+        top: 20%;
+    }
+
+    .ticket-cont {
+        width: 90%;
+    }
+}
+
+/* Mobile view */
+@media screen and (max-width: 480px) {
+    .priority-colors-container {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .priority-color {
+        height: 2rem;
+        width: 3rem;
+    }
+
+    .modal-cont {
+        width: 95vw;
+        left: 2.5%;
+        top: 15%;
+    }
+
+    .ticket-cont {
+        width: 100%;
+    }
+}
+
+/* ===========================
+    ACCESSIBILITY
+   =========================== */
+button:focus,
+.priority-color:focus,
+.ticket-lock:focus {
+    outline: 2px solid var(--accent-green);
+    outline-offset: 2px;
+}
+/* ===========================
+    NOTYF
+   =========================== */
+.notyf-warning-custom {
+    color: black !important;
+    font-weight: 600;
+}

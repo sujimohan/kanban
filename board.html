@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Kanban Board</title>
+        <link rel="stylesheet" href="./board.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/notyf/notyf.min.css" />
+    </head>
+    <body>
+        <div class="toolbox-cont">
+            <div class="toolbox-priority-cont">
+                <div class="lightpink color"></div>
+                <div class="lightgreen color"></div>
+                <div class="lightblue color"></div>
+                <div class="black color"></div>
+            </div>
+            <div class="projtitle"><h1>Kanban Board</h1></div>
+            <div class="action-btn-cont">
+                <div class="add-btn">
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+                <div class="remove-btn">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+            </div>
+        </div>
+        <!-- Main content with listing of Tickets -->
+
+        <div class="main-cont">
+            <div class="deletemessage"><p id="message_delete"></p></div>
+
+            <!-- <div class="ticket-cont">
+                <div class="ticket-color"></div>
+                <div class="ticket-id">1234</div>
+                <div class="task-area">Random Task</div>
+                <div class="ticket-lock">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+            </div> -->
+        </div>
+
+        <!-- Pop up for adding the new tickets -->
+        <div class="modal-cont">
+            <textarea
+                class="textArea-cont"
+                placeholder="Enter Your Task and press SHIFT to save"></textarea>
+            <div class="priority-colors-container">
+                <div class="lightpink priority-color active"></div>
+                <div class="lightgreen priority-color"></div>
+                <div class="lightblue priority-color"></div>
+                <div class="black priority-color"></div>
+            </div>
+        </div>
+        <script
+            src="https://kit.fontawesome.com/589957875e.js"
+            crossorigin="anonymous"></script>
+        <script src="./board.js" type="module"></script>
+        <script src="https://unpkg.com/shortid-dist@1.0.5/dist/shortid-2.2.13.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/notyf/notyf.min.js"></script>
+    </body>
+</html>
