@@ -2,7 +2,7 @@
    🎨 THEME VARIABLES
    =========================== */
 :root {
-    --bg-dark: #4b4b4b;
+    --bg-dark: #2c2c2c;
     --bg-mid: #3d3d3d;
     --bg-light: #cecdcd;
     --accent-green: #4bb543;
@@ -32,11 +32,14 @@ button,
    TOOLBOX
    =========================== */
 .toolbox-cont {
-    height: 5rem;
-    background-color: var(--bg-dark);
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: space-evenly;
+    background-color: var(--bg-dark);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    color: white;
+    flex-wrap: wrap;
 }
 
 .toolbox-cont > * {
@@ -258,6 +261,42 @@ button,
 
 /* Tablet view */
 @media screen and (max-width: 768px) {
+    .toolbox-cont > * {
+        margin-left: 0 !important; /* remove the huge left margin */
+        margin-bottom: 0.4rem;
+    }
+
+    .toolbox-cont {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.7rem;
+    }
+
+    .projtitle {
+        order: -1; /* ensure title appears on top */
+        font-size: 1.1rem;
+        text-align: center;
+    }
+
+    .toolbox-priority-cont {
+        width: auto;
+        justify-content: center;
+        background-color: var(--bg-mid);
+        padding: 0.3rem 0.5rem;
+        border-radius: 6px;
+    }
+
+    .color {
+        width: 2.4rem;
+        height: 1.2rem;
+        margin: 0 0.3rem;
+    }
+
+    .action-btn-cont {
+        width: auto;
+        justify-content: center;
+        background-color: var(--bg-mid);
+    }
     .priority-colors-container {
         width: 50%;
         flex-direction: row;
@@ -282,6 +321,42 @@ button,
 
 /* Mobile view */
 @media screen and (max-width: 480px) {
+    .toolbox-cont > * {
+        margin-left: 0 !important; /* remove the huge left margin */
+        margin-bottom: 0.4rem;
+    }
+
+    .toolbox-cont {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.6rem;
+    }
+
+    .projtitle {
+        order: -1; /* ensure title appears on top */
+        font-size: 1.1rem;
+        text-align: center;
+    }
+
+    .toolbox-priority-cont {
+        width: auto;
+        justify-content: center;
+        background-color: var(--bg-mid);
+        padding: 0.3rem 0.5rem;
+        border-radius: 6px;
+    }
+
+    .color {
+        width: 2.4rem;
+        height: 1.2rem;
+        margin: 0 0.3rem;
+    }
+
+    .action-btn-cont {
+        width: auto;
+        justify-content: center;
+        background-color: var(--bg-mid);
+    }
     .priority-colors-container {
         width: 100%;
         flex-direction: row;
